@@ -1,0 +1,16 @@
+#import user_schema.graphql
+
+enum Status{
+    SUCCESS
+    FAILLED
+}
+type Payload{
+    user:User
+}
+
+type ResponseMessage{
+    code:Int,
+    message:String,
+    payload:Payload,
+    status:Status,
+}

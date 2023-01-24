@@ -1,0 +1,6 @@
+type Music{
+    Id: ID!,
+    author: String!,
+    title:String,
+    categorie:String,
+}

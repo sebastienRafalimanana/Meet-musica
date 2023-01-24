@@ -1,0 +1,28 @@
+# import schema.graphql
+
+type User{
+    id: ID,
+    firstName:String!,
+    lastName:String,
+    email:String!,
+    password:String!,
+    bio:String!,
+    profil:String!
+}
+input UserCreatAccountInput{
+    firstName:String!,
+    lastName:String,
+    email:String!,
+    password:String!,
+    bio:String,
+    profil:String
+}
+
+type Query{
+    getAllUser: [User]
+}
+
+type Mutation{
+    createAccount(createAccountInput:UserCreatAccountInput) : ResponseMessage
+}
+
