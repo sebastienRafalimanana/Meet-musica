@@ -6,9 +6,9 @@ const sequelize = require("../config/db_config");
 /*resolvers*/
 
 const { userMutation, userQuery } = require("./resolver/user_resolver");
+const { musicMutation, musicQuery } = require("./resolver/music_resolver");
 
 //} fin resolvers import
-
 
 async function main() {
   /**Connection base de donne */
@@ -16,7 +16,7 @@ async function main() {
     await sequelize.authenticate();
     console.log("Connection has been established successfully.");
     try {
-      await sequelize.sync({alter:true});
+      await sequelize.sync({ alter: true });
       console.log("db syncronized");
     } catch (error) {
       console.log("Model synchronization have a problem", error);
@@ -31,10 +31,12 @@ async function main() {
       resolvers: {
         Query: {
           ...userQuery,
+          ...musicQuery,
         },
         Mutation: {
-          ...userMutation
-        }
+          ...userMutation,
+          ...musicMutation
+        },
       },
     }),
   });

@@ -8,7 +8,7 @@ class Music extends Model {
   categorie;
 }
 
-User.init(
+Music.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -24,6 +24,9 @@ User.init(
       allowNull: false,
     },
     categorie: {
+      type: DataTypes.STRING,
+    },
+    url: {
       type: DataTypes.STRING,
     }
   },

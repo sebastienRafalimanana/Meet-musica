@@ -1,6 +1,21 @@
-type Music{
-    Id: ID!,
-    author: String!,
-    title:String,
-    categorie:String,
+type Music {
+  Id: ID!
+  author: String!
+  title: String
+  categorie: String
+  url: String!
+}
+
+input MusicInput {
+  author: String!
+  title: String
+  categorie: String
+  url: String!
+}
+
+type Query {
+  getAllMusic: [Music]
+}
+type Mutation {
+    addMusic(musicInput:MusicInput):Music
 }
