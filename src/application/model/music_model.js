@@ -1,6 +1,7 @@
 const {DataTypes, Model } = require("sequelize");
 const sequelize = require ('../../config/db_config')
 
+
 class Music extends Model {
   id;
   author;
@@ -35,5 +36,6 @@ Music.init(
     modelName: "Music",
   }
 );
+
 
 module.exports = Music

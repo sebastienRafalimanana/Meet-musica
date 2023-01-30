@@ -1,0 +1,13 @@
+
+type Collection{
+    id:ID!
+    musics:[Music]
+}
+
+type Query{
+    getUserCollection(userMail:String):Collection
+}
+
+type Mutation{
+    addMusicInCollection(MusicId:ID):Collection
+}

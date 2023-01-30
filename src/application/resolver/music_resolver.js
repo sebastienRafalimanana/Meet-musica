@@ -1,5 +1,4 @@
-const Music = require("../model/music_model")
-const ResponseMessage = require("../helpers/ResponseMessage")
+const  Music = require("../model/music_model")
 
 const musicQuery = {
     getAllMusic: async()=>{

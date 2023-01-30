@@ -17,12 +17,22 @@ input UserCreatAccountInput{
     bio:String,
     profil:String
 }
+input UserChangeProfil{
+    email:String,
+    profil:String
+}
+input UserAuthInput{
+    email:String,
+    password:String
+}
 
 type Query{
     getAllUser: [User]
+    userAuth(userAuthInput:UserAuthInput):User
 }
 
 type Mutation{
     createAccount(createAccountInput:UserCreatAccountInput) : ResponseMessage
+    changeUserProfil(changeProfilInput:UserChangeProfil):User
 }
 
